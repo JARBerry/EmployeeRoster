@@ -1,6 +1,6 @@
 # EmployeeRoster
 
-Simple table view to allow adding of employee information :
+A simple table view to allow adding of employee information :
 
 .Employee name
 
