@@ -32,6 +32,7 @@ class EmployeeTypeTableViewController: UITableViewController {
         return 1
     }
 
+    // total of Employees
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        
         return EmployeeType.all.count

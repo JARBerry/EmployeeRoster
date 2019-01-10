@@ -34,7 +34,7 @@ class EmployeeListTableViewController: UITableViewController {
         return employees.count
     }
 
-    
+    // update Employee Information
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PropertyKeys.employeeCellIdentifier, for: indexPath)
 
@@ -46,7 +46,7 @@ class EmployeeListTableViewController: UITableViewController {
     }
 
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             employees.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -65,6 +65,8 @@ class EmployeeListTableViewController: UITableViewController {
         }
     }
     
+    
+    // Prepeare unwind Segue
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
         guard let employeeDetailTableViewController = segue.source as? EmployeeDetailTableViewController,
             let employee = employeeDetailTableViewController.employee else {return}

@@ -61,6 +61,7 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
         
     }
     
+    // update employee information
     func updateView() {
         if let employee = employee {
             navigationItem.title = employee.name
@@ -77,6 +78,7 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
     }
     
     
+    // define format of date picker returns a string
     
     func formatDate(date: Date) -> String {
         let dateFormatter = DateFormatter()
@@ -85,6 +87,7 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
         return dateFormatter.string(from: date)
     }
     
+    // set date picker returns a date
     func setDatePickerFromString(date: String) -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -97,7 +100,7 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
     
     
     
-    
+    // change height of cell depedning on if date picker is chosen
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     
         if indexPath.row != 2 {
@@ -132,6 +135,7 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
     }
     
   
+    // if save button tapped update details
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         if let name = nameTextField.text,
@@ -147,6 +151,7 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
     }
     
     
+    // if date selected call date picker
     
     @IBAction func dobDatePickerAction(_ sender: UIDatePicker) {
         
@@ -155,6 +160,7 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
     
     
     
+    // prepare for segue to select employee type from list
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EmployeeTypeSegue" {
